@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "react-oidc-context";
+import { useKeycloak } from "@react-keycloak/web";
 
 const Login: React.FC = () => {
-  const { keycloak, initialized } = useAuth();
+  const { keycloak, initialized } = useKeycloak();
   const navigate = useNavigate();
 
   useEffect(() => {
