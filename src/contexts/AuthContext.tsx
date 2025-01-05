@@ -1,4 +1,3 @@
-// src/contexts/AuthContext.tsx
 import React from "react";
 import { AuthProvider as OidcProvider } from "react-oidc-context";
 

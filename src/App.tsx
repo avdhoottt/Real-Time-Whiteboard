@@ -1,9 +1,7 @@
-// src/App.tsx
-import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ReactKeycloakProvider } from "@react-keycloak/web";
-import keycloak from "./Keycloak";
-import Navbar from "./components/Navbar";
+import keycloak from "./keycloak";
+import Navbar from "./components/NavBar";
 import Home from "./pages/Home";
 import Whiteboard from "./pages/Whiteboard";
 import PrivateRoute from "./components/PrivateRoute";

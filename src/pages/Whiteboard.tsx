@@ -14,8 +14,8 @@ import {
   faDownload,
 } from "@fortawesome/free-solid-svg-icons";
 import { useWebSocket } from "../contexts/WebSocketContext";
-import { useParams, useNavigate } from "react-router-dom";
-import keycloak from "../Keycloak";
+import { useParams } from "react-router-dom";
+import keycloak from "../keycloak";
 
 type ElementType = "pencil" | "line" | "rectangle" | "circle" | "eraser";
 
@@ -123,27 +123,6 @@ const Whiteboard: React.FC = () => {
     };
 
     setElements((prev) => [...prev, newElement]);
-  };
-
-  const draw = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (!drawing) return;
-
-    const { offsetX, offsetY } = e.nativeEvent;
-    if (socket && sessionId) {
-      socket.emit("cursor-move", {
-        sessionId,
-        userId: socket.id,
-        username: keycloak?.tokenParsed?.preferred_username || "Anonymous",
-        x: offsetX,
-        y: offsetY,
-      });
-    }
-    const currentElement = elements[elements.length - 1];
-
-    const newPoints = [...currentElement.points, { x: offsetX, y: offsetY }];
-    const updatedElement = { ...currentElement, points: newPoints };
-
-    setElements((prev) => [...prev.slice(0, -1), updatedElement]);
   };
 
   const stopDrawing = () => {
