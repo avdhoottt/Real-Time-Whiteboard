@@ -54,7 +54,7 @@ Features include real-time cursor tracking, various drawing tools, and session s
 
 ## Demo Video
 
-[![Demo](https://youtu.be/j4xtcguOfT8)](https://youtu.be/j4xtcguOfT8)
+[![demo](https://img.youtube.com/vi/j4xtcguOfT8/0.jpg)](https://youtu.be/j4xtcguOfT8)
 
 ## Screenshots
 
